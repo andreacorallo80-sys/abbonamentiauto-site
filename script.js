@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "393927008720"; // modifica qui il numero WhatsApp se necessario
+const WHATSAPP_NUMBER = "393513955191"; // modifica qui il numero WhatsApp se necessario
 const EMAIL = "postmaster@abbonamentiauto.it";
 
 const offers = [
@@ -80,45 +80,43 @@ function whatsappLink(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+
 function renderOffers(filter = "tutte") {
   const grid = document.getElementById("offersGrid");
   const filtered = filter === "tutte" ? offers : offers.filter(o => o.segmento === filter);
+
   grid.innerHTML = filtered.map((offer) => {
     const msg = `Ciao, vorrei informazioni sull'offerta ${offer.brand} ${offer.modello} a ${offer.canone}/mese pubblicata su Abbonamentiauto.it.`;
+
     return `
-      <article class="offer-card">
-        <div class="offer-content">
-          <div class="offer-top">
-            <div>
-              <div class="car-brand">${offer.brand}</div>
-              <h3>${offer.modello}</h3>
-            </div>
-            <span class="segment">${offer.segmento}</span>
-          </div>
+      <article class="offer-card offer-card-clean">
+
+        <div class="offer-visual">
           <img class="offer-img" src="${offer.immagine}" alt="${offer.brand} ${offer.modello}">
-          <div class="spec-row">
-            <span>${offer.alimentazione}</span>
-            <span>${offer.cambio}</span>
-            <span>${offer.mesi} mesi</span>
-            <span>${offer.km} km</span>
+        </div>
+
+        <div class="offer-clean-footer">
+          <div class="offer-clean-info">
+            <div class="car-brand">${offer.brand}</div>
+            <h3>${offer.modello}</h3>
+            <p>A partire da <strong>${offer.canone.replace(' €','€')}</strong> / mese</p>
           </div>
-          <div class="bottom-box">
-            <div class="price">${offer.canone.replace(' €','€')}<small>/mese</small></div>
-            <div class="mini-specs">
-              <span>Anticipo ${offer.anticipo}</span>
-              <span>${offer.km} km totali</span>
-            </div>
-            <div class="card-actions">
-              <a class="btn primary" href="${whatsappLink(msg)}" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn ghost" href="mailto:${EMAIL}?subject=Richiesta offerta ${offer.brand} ${offer.modello}&body=${encodeURIComponent(msg)}">Email</a>
-            </div>
+
+          <div class="offer-clean-actions">
+            <a class="btn ghost" href="mailto:${EMAIL}?subject=Richiesta offerta ${offer.brand} ${offer.modello}&body=${encodeURIComponent(msg)}">
+              Dettagli
+            </a>
+
+            <a class="btn primary" href="${whatsappLink(msg)}" target="_blank" rel="noopener">
+              WhatsApp
+            </a>
           </div>
         </div>
+
       </article>
     `;
   }).join("");
 }
-
 function setupFilters() {
   document.querySelectorAll(".filter").forEach(button => {
     button.addEventListener("click", () => {
