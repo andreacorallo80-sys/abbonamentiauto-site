@@ -1,0 +1,7 @@
+<svg width="760" height="130" viewBox="0 0 760 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="130" rx="22" fill="transparent"/>
+  <path d="M34 80C82 22 174 22 222 80" stroke="#E30613" stroke-width="9" stroke-linecap="round"/>
+  <path d="M52 83H205" stroke="#E30613" stroke-width="9" stroke-linecap="round"/>
+  <text x="250" y="61" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">Abbonamentiauto.it</text>
+  <text x="253" y="95" fill="#E30613" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" letter-spacing="3">BASTA SOLO UN CLICK!</text>
+</svg>
