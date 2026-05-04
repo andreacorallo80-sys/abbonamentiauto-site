@@ -1,1003 +1,471 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-
-:root {
-  --bg: #050506;
-  --bg-soft: #0a0a0d;
-  --panel: rgba(255,255,255,0.055);
-  --panel-strong: rgba(255,255,255,0.085);
-  --line: rgba(255,255,255,0.10);
-  --text: #ffffff;
-  --muted: rgba(255,255,255,0.72);
-  --muted-2: rgba(255,255,255,0.55);
-  --red: #e00023;
-  --red-light: #ff2846;
-  --red-soft: rgba(224,0,35,0.18);
-  --shadow: 0 24px 80px rgba(0,0,0,0.55);
-  --radius: 28px;
-  --container: 1180px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 10% 0%, rgba(224,0,35,0.16), transparent 28%),
-    radial-gradient(circle at 90% 18%, rgba(224,0,35,0.08), transparent 30%),
-    linear-gradient(180deg, #050506 0%, #09090c 55%, #050506 100%);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 35, 65, 0.17) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: -1;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: min(var(--container), calc(100% - 40px));
-  margin: 0 auto;
-}
-
-
-/* HEADER */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  min-height: 96px;
-  padding: 18px 0;
-  background: rgba(5,5,7,0.84);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  min-width: 230px;
-  flex-shrink: 0;
-}
-
-.brand img {
-  height: 58px;
-  width: auto;
-  object-fit: contain;
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex: 1;
-}
-
-.main-nav a {
-  color: rgba(255,255,255,0.78);
-  font-size: 13px;
-  font-weight: 700;
-  transition: 0.25s ease;
-}
-
-.main-nav a:hover {
-  color: #ffffff;
-}
-
-
-/* BUTTONS */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 13px 20px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: -0.1px;
-  cursor: pointer;
-  transition: 0.25s ease;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-
-.btn.small {
-  min-height: 42px;
-  padding: 11px 18px;
-  font-size: 12px;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--red), var(--red-light));
-  color: #fff;
-  box-shadow: 0 18px 34px rgba(224,0,35,0.26);
-}
-
-.btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 42px rgba(224,0,35,0.34);
-}
-
-.btn.ghost {
-  background: rgba(255,255,255,0.055);
-  color: #ffffff;
-  border-color: rgba(255,255,255,0.14);
-}
-
-.btn.ghost:hover {
-  background: rgba(255,255,255,0.10);
-  transform: translateY(-2px);
-}
-
-
-/* HERO */
-
-.hero {
-  position: relative;
-  min-height: 760px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(224,0,35,0.18), transparent 25%),
-    linear-gradient(110deg, rgba(224,0,35,0.16), transparent 42%),
-    linear-gradient(180deg, rgba(255,255,255,0.03), transparent 45%);
-}
-
-.hero-bg::before {
-  content: "";
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  top: 34%;
-  height: 240px;
-  border-top: 3px solid rgba(255, 30, 60, 0.72);
-  border-radius: 50%;
-  transform: rotate(-4deg);
-  filter: drop-shadow(0 0 28px rgba(255,0,48,0.55));
-}
-
-.hero-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1.02fr 0.98fr;
-  gap: 48px;
-  align-items: center;
-  padding: 70px 0 80px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  color: var(--red-light);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.hero h1 {
-  margin: 0;
-  font-size: clamp(48px, 6.2vw, 88px);
-  line-height: 0.91;
-  letter-spacing: -4px;
-  font-weight: 900;
-}
-
-.hero h1 strong {
-  display: block;
-  color: var(--red-light);
-  font-weight: 900;
-}
-
-.hero-copy p {
-  max-width: 620px;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.hero-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  max-width: 680px;
-}
-
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 40, 70, 0.35);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  box-shadow: 0 0 18px rgba(255, 0, 55, 0.12);
-  backdrop-filter: blur(8px);
-}
-
-.hero-pill:first-child,
-.hero-pill:nth-child(2) {
-  background: rgba(224, 0, 35, 0.18);
-  border-color: rgba(255, 40, 70, 0.65);
-}
-
-.hero-stats {
-  display: flex;
-  gap: 12px;
-  margin-top: 34px;
-  flex-wrap: wrap;
-}
-
-.hero-stats div {
-  min-width: 112px;
-  padding: 16px 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.055);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.hero-stats strong {
-  display: block;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.hero-stats span {
-  display: block;
-  margin-top: 5px;
-  color: var(--muted-2);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-
-/* HERO OFFER CARD */
-
-.hero-card-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-offer-card {
-  position: relative;
-  width: min(100%, 520px);
-  min-height: 590px;
-  border-radius: 34px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 10%, rgba(255,255,255,0.10), transparent 26%),
-    linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: var(--shadow);
-}
-
-.offer-badge {
-  position: absolute;
-  top: 26px;
-  right: 26px;
-  z-index: 4;
-  max-width: 110px;
-  padding: 12px 14px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--red), var(--red-light));
-  color: white;
-  font-size: 10px;
-  line-height: 1.1;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-  box-shadow: 0 14px 30px rgba(224,0,35,0.34);
-}
-
-.car-stage {
-  position: relative;
-  min-height: 330px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 72px 40px 20px;
-  background:
-    radial-gradient(circle at center, rgba(224,0,35,0.19), transparent 45%);
-}
-
-.car-stage::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 32px;
-  left: 15%;
-  bottom: 34px;
-  background: rgba(0,0,0,0.55);
-  filter: blur(18px);
-  border-radius: 50%;
-}
-
-.car-stage img {
-  position: relative;
-  z-index: 2;
-  max-height: 250px;
-  object-fit: contain;
-}
-
-.hero-offer-content {
-  position: relative;
-  margin: 0 22px 22px;
-  padding: 26px;
-  border-radius: 26px;
-  background: rgba(4,4,6,0.78);
-  border: 1px solid rgba(255,40,70,0.26);
-}
-
-.hero-offer-content > span {
-  color: var(--red-light);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-}
-
-.hero-offer-content h2 {
-  margin: 7px 0 12px;
-  font-size: 28px;
-  line-height: 1.06;
-  letter-spacing: -1px;
-}
-
-.price {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-.price strong {
-  font-size: 58px;
-  line-height: 0.92;
-  letter-spacing: -3px;
-}
-
-.price small {
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-weight: 800;
-}
-
-.mini-specs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-}
-
-.mini-specs span {
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.88);
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.whatsapp-float {
-  position: absolute;
-  right: 22px;
-  bottom: -18px;
-  padding: 11px 16px;
-  border-radius: 999px;
-  background: #25D366;
-  color: #06130a;
-  font-size: 12px;
-  font-weight: 900;
-  box-shadow: 0 16px 30px rgba(37,211,102,0.25);
-}
-
-
-/* SECTIONS */
-
-.section {
-  padding: 92px 0;
-  position: relative;
-}
-
-.section-head {
-  max-width: 760px;
-  margin-bottom: 36px;
-}
-
-.section-head h2,
-.shead h2,
-.two-col h2,
-.contact-card h2 {
-  margin: 0;
-  font-size: clamp(34px, 5vw, 58px);
-  line-height: 0.98;
-  letter-spacing: -2px;
-  font-weight: 900;
-}
-
-.section-head p,
-.two-col p,
-.contact-card p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.7;
-  margin-top: 16px;
-}
-
-
-/* OFFERS */
-
-.offers {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%),
-    #050506;
-}
-
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 24px;
-}
-
-.offer-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.38);
-}
-
-.offer-image {
-  min-height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  background:
-    radial-gradient(circle at center, rgba(224,0,35,0.18), transparent 42%),
-    linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
-}
-
-.offer-image img {
-  max-height: 180px;
-  object-fit: contain;
-}
-
-.offer-content {
-  padding: 24px;
-}
-
-.brand-label {
-  color: var(--red-light);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-
-.offer-content h3 {
-  margin: 8px 0 16px;
-  font-size: 24px;
-  line-height: 1.1;
-  letter-spacing: -0.8px;
-}
-
-.offer-price {
-  display: flex;
-  align-items: flex-end;
-  gap: 5px;
-  margin-bottom: 16px;
-}
-
-.offer-price strong {
-  font-size: 44px;
-  line-height: 0.95;
-  letter-spacing: -2px;
-}
-
-.offer-price small {
-  color: var(--muted);
-  margin-bottom: 5px;
-  font-weight: 800;
-}
-
-.offer-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-
-.offer-specs span {
-  padding: 8px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.07);
-  color: rgba(255,255,255,0.82);
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.card-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-
-/* ABBONAMENTI */
-
-.abbonamenti-section {
-  position: relative;
-  padding: 90px 0;
-  background:
-    radial-gradient(circle at top left, rgba(224, 0, 35, 0.16), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(224, 0, 35, 0.10), transparent 34%),
-    linear-gradient(180deg, #050506 0%, #0a0a0c 100%);
-  overflow: hidden;
-}
-
-.abbonamenti-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 35, 65, 0.20) 1px, transparent 1px);
-  background-size: 22px 22px;
-  opacity: 0.16;
-  pointer-events: none;
-}
-
-.abbonamenti-section .container {
-  position: relative;
-  z-index: 2;
-}
-
-.abbonamenti-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-  margin-top: 34px;
-}
-
-.abbonamento-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 28px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-}
-
-.abbonamento-preview {
-  min-height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    radial-gradient(circle at center, rgba(224, 0, 35, 0.24), transparent 45%),
-    linear-gradient(180deg, rgba(30, 30, 34, 0.95), rgba(8, 8, 10, 1));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.abbonamento-preview span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: rgba(224, 0, 35, 0.16);
-  border: 1px solid rgba(255, 40, 70, 0.42);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.abbonamento-content {
-  padding: 28px;
-}
-
-.abbonamento-content small {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--red-light);
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.abbonamento-content h3 {
-  margin: 0 0 12px;
-  color: #ffffff;
-  font-size: clamp(24px, 3vw, 34px);
-  line-height: 1.05;
-  letter-spacing: -0.8px;
-}
-
-.abbonamento-content p {
-  margin: 0 0 22px;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-
-/* HOW */
-
-.how {
-  background: rgba(255,255,255,0.015);
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 18px;
-}
-
-.step-card {
-  padding: 28px;
-  border-radius: 26px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-}
-
-.step-card span {
-  display: inline-flex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  background: var(--red-soft);
-  color: var(--red-light);
-  font-weight: 900;
-  margin-bottom: 20px;
-}
-
-.step-card h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-}
-
-.step-card p {
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-
-/* BENEFITS */
-
-.two-col,
-.two {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-.benefit-list {
-  display: grid;
-  gap: 16px;
-}
-
-.benefit-item,
-.panel {
-  padding: 28px;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(255,255,255,0.09);
-}
-
-.benefit-item h3,
-.panel h3 {
-  margin: 0 0 10px;
-  font-size: 22px;
-}
-
-.benefit-item p,
-.panel p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-
-/* FAQ */
-
-.faq-section {
-  background:
-    radial-gradient(circle at left, rgba(224,0,35,0.12), transparent 34%),
-    #050506;
-}
-
-.shead small {
-  color: var(--red-light);
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-}
-
-.shead h2 {
-  margin-top: 8px;
-}
-
-.faq {
-  display: grid;
-  gap: 14px;
-}
-
-.faq .shead {
-  margin-bottom: 8px;
-}
-
-.muted {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-
-/* CONTACT */
-
-.contact-section {
-  padding-top: 40px;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 42px;
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at top left, rgba(224,0,35,0.16), transparent 35%),
-    rgba(255,255,255,0.055);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: var(--shadow);
-}
-
-.contact-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-
-/* FOOTER */
-
-.site-footer {
-  padding: 34px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: #040405;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--muted-2);
-  font-size: 13px;
-  flex-wrap: wrap;
-}
-
-
-/* HIDE UNWANTED CARD BADGES */
-
-.offer-card .badge,
-.offer-card .tag,
-.offer-card .category,
-.offer-card .card-tag,
-.offer-card .offer-badge,
-.card .badge,
-.card .tag,
-.card .category,
-.card .card-tag,
-.card .offer-badge {
-  display: none !important;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 1000px) {
-  .main-nav {
-    display: none;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    padding-top: 48px;
-  }
-
-  .hero-card-wrap {
-    justify-content: flex-start;
-  }
-
-  .offers-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .steps-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .two-col,
-  .two {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: min(100% - 28px, var(--container));
-  }
-
-  .site-header {
-    min-height: 82px;
-    padding: 14px 0;
-  }
-
-  .brand {
-    min-width: 170px;
-  }
-
-  .brand img {
-    height: 46px;
-  }
-
-  .header-inner {
-    gap: 12px;
-  }
-
-  .site-header .btn {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-grid {
-    padding: 46px 0 64px;
-  }
-
-  .hero h1 {
-    font-size: clamp(44px, 14vw, 66px);
-    letter-spacing: -2.8px;
-  }
-
-  .hero-copy p {
-    font-size: 15px;
-  }
-
-  .hero-categories {
-    gap: 8px;
-    margin-top: 20px;
-  }
-
-  .hero-pill {
-    font-size: 11px;
-    padding: 8px 12px;
-  }
-
-  .hero-offer-card {
-    min-height: auto;
-    border-radius: 28px;
-  }
-
-  .car-stage {
-    min-height: 260px;
-    padding: 60px 24px 10px;
-  }
-
-  .hero-offer-content {
-    padding: 22px;
-    margin: 0 16px 20px;
-  }
-
-  .hero-offer-content h2 {
-    font-size: 23px;
-  }
-
-  .price strong {
-    font-size: 48px;
-  }
-
-  .section {
-    padding: 70px 0;
-  }
-
-  .offers-grid,
-  .abbonamenti-grid,
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .offer-image {
-    min-height: 220px;
-  }
-
-  .abbonamenti-section {
-    padding: 70px 0;
-  }
-
-  .abbonamento-preview {
-    min-height: 210px;
-  }
-
-  .contact-card {
-    padding: 28px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Abbonamentiauto.it | Noleggio a lungo termine e abbonamenti auto</title>
+
+  <meta name="description" content="Scopri le migliori offerte di abbonamento auto e noleggio a lungo termine per privati, aziende e partite IVA. Basta solo un click!" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="#" class="brand" aria-label="Abbonamentiauto.it">
+        <img src="assets/logo.png" alt="Abbonamentiauto.it" />
+      </a>
+
+      <nav class="main-nav">
+        <a href="#offerte">Offerte</a>
+        <a href="#abbonamenti">Abbonamenti</a>
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#vantaggi">Vantaggi</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn primary small" href="#contatti">Richiedi info</a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Noleggio a lungo termine e abbonamenti auto</span>
+
+          <h1>
+            La tua nuova auto in abbonamento.
+            <strong>Basta solo un click!</strong>
+          </h1>
+
+          <p>
+            Scegli l’offerta, invia la richiesta e ricevi supporto da consulenti dedicati.
+            Soluzioni per privati, aziende e partite IVA.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#offerte">Guarda le offerte</a>
+            <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20informazioni%20sulle%20offerte%20di%20Abbonamentiauto.it" target="_blank">
+              Scrivici su WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-categories">
+            <span class="hero-pill">SUV</span>
+            <span class="hero-pill">SUV Premium</span>
+            <span class="hero-pill">City Car</span>
+            <span class="hero-pill">Crossover</span>
+            <span class="hero-pill">Business</span>
+            <span class="hero-pill">Senza anticipo</span>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>48</strong>
+              <span>mesi</span>
+            </div>
+            <div>
+              <strong>15k</strong>
+              <span>km/anno</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>pensieri</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap">
+          <article class="hero-offer-card">
+            <div class="offer-badge">Offerta in evidenza</div>
+
+            <div class="car-stage">
+              <img src="immagini/citroen-c3.png" alt="Citroen C3" />
+            </div>
+
+            <div class="hero-offer-content">
+              <span>Citroen</span>
+              <h2>C3 Turbo 100 cv Manuale PLUS</h2>
+
+              <div class="price">
+                <strong>290€</strong>
+                <small>/mese</small>
+              </div>
+
+              <div class="mini-specs">
+                <span>48 mesi</span>
+                <span>60.000 km</span>
+                <span>Anticipo 1.000€</span>
+              </div>
+
+              <a class="whatsapp-float" href="https://wa.me/393927008720?text=Ciao%2C%20sono%20interessato%20alla%20Citroen%20C3%20vista%20su%20Abbonamentiauto.it" target="_blank">
+                WhatsApp
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- OFFERTE -->
+    <section id="offerte" class="section offers">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Le nostre proposte</span>
+          <h2>Offerte noleggio a lungo termine</h2>
+          <p>
+            Una selezione di offerte pensate per chi vuole guidare senza immobilizzare capitale,
+            con canone chiaro e servizi inclusi.
+          </p>
+        </div>
+
+        <div class="offers-grid">
+
+          <article class="offer-card">
+            <div class="offer-image">
+              <img src="immagini/citroen-c3.png" alt="Citroen C3" />
+            </div>
+
+            <div class="offer-content">
+              <span class="brand-label">Citroen</span>
+              <h3>C3 Turbo 100 cv Manuale PLUS</h3>
+
+              <div class="offer-price">
+                <strong>290€</strong>
+                <small>/mese</small>
+              </div>
+
+              <div class="offer-specs">
+                <span>48 mesi</span>
+                <span>60.000 km</span>
+                <span>Anticipo 1.000€</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn primary" href="#contatti">Dettagli</a>
+                <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20informazioni%20sulla%20Citroen%20C3" target="_blank">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-image">
+              <img src="immagini/grande-panda.png" alt="Fiat Grande Panda" />
+            </div>
+
+            <div class="offer-content">
+              <span class="brand-label">Fiat</span>
+              <h3>Grande Panda Hybrid</h3>
+
+              <div class="offer-price">
+                <strong>299€</strong>
+                <small>/mese</small>
+              </div>
+
+              <div class="offer-specs">
+                <span>48 mesi</span>
+                <span>60.000 km</span>
+                <span>Anticipo 1.500€</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn primary" href="#contatti">Dettagli</a>
+                <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20informazioni%20sulla%20Fiat%20Grande%20Panda" target="_blank">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card">
+            <div class="offer-image">
+              <img src="immagini/nissan-juke.png" alt="Nissan Juke" />
+            </div>
+
+            <div class="offer-content">
+              <span class="brand-label">Nissan</span>
+              <h3>Juke Hybrid Automatic</h3>
+
+              <div class="offer-price">
+                <strong>389€</strong>
+                <small>/mese</small>
+              </div>
+
+              <div class="offer-specs">
+                <span>48 mesi</span>
+                <span>60.000 km</span>
+                <span>Anticipo 2.000€</span>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn primary" href="#contatti">Dettagli</a>
+                <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20informazioni%20sulla%20Nissan%20Juke" target="_blank">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABBONAMENTI -->
+    <section id="abbonamenti" class="abbonamenti-section">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Formula flessibile</span>
+          <h2>Offerte Abbonamenti</h2>
+          <p>
+            Scopri le soluzioni in abbonamento auto pensate per chi cerca semplicità,
+            velocità e massima libertà di scelta.
+          </p>
+        </div>
+
+        <div class="abbonamenti-grid">
+
+          <article class="abbonamento-card">
+            <div class="abbonamento-preview">
+              <span>Card in arrivo</span>
+            </div>
+
+            <div class="abbonamento-content">
+              <small>Abbonamento auto</small>
+              <h3>Nuove offerte disponibili a breve</h3>
+              <p>
+                In questa sezione pubblicheremo le card dedicate alle formule di abbonamento,
+                con canone mensile, durata, anticipo e servizi inclusi.
+              </p>
+              <a class="btn primary" href="#contatti">Richiedi informazioni</a>
+            </div>
+          </article>
+
+          <article class="abbonamento-card">
+            <div class="abbonamento-preview">
+              <span>Formula flessibile</span>
+            </div>
+
+            <div class="abbonamento-content">
+              <small>Soluzione smart</small>
+              <h3>Libertà, semplicità e canone chiaro</h3>
+              <p>
+                L’abbonamento auto è pensato per chi vuole guidare senza complicazioni,
+                con un processo rapido e assistenza dedicata.
+              </p>
+              <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20informazioni%20sulle%20offerte%20di%20abbonamento%20auto." target="_blank">
+                Scrivici su WhatsApp
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- COME FUNZIONA -->
+    <section id="come-funziona" class="section how">
+      <div class="container">
+
+        <div class="section-head">
+          <span class="eyebrow">Processo semplice</span>
+          <h2>Come funziona</h2>
+          <p>
+            Dal primo click alla nuova auto: un percorso rapido, chiaro e guidato da consulenti dedicati.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step-card">
+            <span>01</span>
+            <h3>Scegli l’offerta</h3>
+            <p>Consulta le proposte disponibili e individua la soluzione più adatta alle tue esigenze.</p>
+          </div>
+
+          <div class="step-card">
+            <span>02</span>
+            <h3>Invia la richiesta</h3>
+            <p>Compila il form o scrivici su WhatsApp per ricevere supporto immediato.</p>
+          </div>
+
+          <div class="step-card">
+            <span>03</span>
+            <h3>Parla con un consulente</h3>
+            <p>Un professionista ti aiuta a scegliere durata, chilometraggio e servizi inclusi.</p>
+          </div>
+
+          <div class="step-card">
+            <span>04</span>
+            <h3>Guida la tua auto</h3>
+            <p>Ricevi la soluzione più adatta e vivi la mobilità in modo semplice e moderno.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- VANTAGGI -->
+    <section id="vantaggi" class="section benefits">
+      <div class="container two-col">
+
+        <div>
+          <span class="eyebrow">Perché sceglierci</span>
+          <h2>Un modo più semplice per scegliere la tua prossima auto.</h2>
+          <p>
+            Abbonamentiauto.it nasce per rendere più accessibili le formule di mobilità moderna:
+            noleggio a lungo termine, abbonamenti auto e soluzioni personalizzate.
+          </p>
+        </div>
+
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <h3>Canone chiaro</h3>
+            <p>Offerte leggibili, con durata, chilometraggio e anticipo sempre evidenti.</p>
+          </div>
+
+          <div class="benefit-item">
+            <h3>Consulenza dedicata</h3>
+            <p>Non sei lasciato solo: un consulente ti segue nella scelta della formula migliore.</p>
+          </div>
+
+          <div class="benefit-item">
+            <h3>Soluzioni per tutti</h3>
+            <p>Privati, aziende, professionisti e partite IVA possono trovare formule dedicate.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PARTNER + FAQ -->
+    <section id="faq" class="section faq-section">
+      <div class="container two">
+
+        <div id="partner" class="panel partner">
+          <div class="shead">
+            <small>Partner</small>
+            <h2>Diventa partner</h2>
+          </div>
+
+          <p class="muted">
+            Dealer, officine, carrozzerie e agenzie possono collaborare con Abbonamentiauto.it
+            per generare nuove richieste di noleggio.
+          </p>
+
+          <a class="btn primary" href="#contatti">Richiedi informazioni</a>
+        </div>
+
+        <div class="faq">
+          <div class="shead">
+            <small>Domande frequenti</small>
+            <h2>FAQ</h2>
+          </div>
+
+          <div class="panel">
+            <h3>Che differenza c’è tra abbonamento auto e noleggio a lungo termine?</h3>
+            <p>
+              L’abbonamento auto è una formula flessibile pensata per chi cerca semplicità e rapidità,
+              mentre il noleggio a lungo termine è ideale per chi desidera una soluzione stabile con durata,
+              chilometraggio e condizioni definite. In entrambi i casi hai un canone mensile e servizi inclusi.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Cosa include il canone mensile?</h3>
+            <p>
+              Il canone può includere servizi come assicurazione RCA, manutenzione ordinaria e straordinaria,
+              assistenza, soccorso stradale e gestione amministrativa. I servizi inclusi possono variare in base
+              all’offerta scelta.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Le offerte sono disponibili per privati e aziende?</h3>
+            <p>
+              Sì, Abbonamentiauto.it propone soluzioni per privati, partite IVA, professionisti e aziende.
+              Ogni richiesta viene valutata per individuare la formula più adatta alle tue esigenze.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>È possibile avere un’offerta senza anticipo?</h3>
+            <p>
+              Sì, su alcune vetture sono disponibili soluzioni con anticipo zero o anticipo ridotto.
+              La disponibilità dipende dal modello, dalla durata, dal chilometraggio e dalla formula selezionata.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Posso richiedere un preventivo personalizzato?</h3>
+            <p>
+              Certo. Puoi inviare una richiesta dal sito o contattarci su WhatsApp.
+              Un consulente ti aiuterà a trovare l’auto, il canone e la formula più adatti al tuo profilo.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Come posso ricevere maggiori informazioni?</h3>
+            <p>
+              Puoi cliccare su “Richiedi info”, compilare il modulo di contatto oppure scriverci direttamente
+              su WhatsApp. La mail di riferimento è <strong>postmaster@abbonamentiauto.it</strong>.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTATTI -->
+    <section id="contatti" class="section contact-section">
+      <div class="container contact-card">
+
+        <div>
+          <span class="eyebrow">Contatti</span>
+          <h2>Vuoi ricevere un’offerta?</h2>
+          <p>
+            Scrivici e ti aiutiamo a trovare la soluzione più adatta tra abbonamento auto e noleggio a lungo termine.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:postmaster@abbonamentiauto.it">postmaster@abbonamentiauto.it</a>
+          <a class="btn ghost" href="https://wa.me/393927008720?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sulle%20offerte%20di%20Abbonamentiauto.it" target="_blank">
+            WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Abbonamentiauto.it - Noleggio a lungo termine e abbonamenti auto.</p>
+      <p>Mail: <strong>postmaster@abbonamentiauto.it</strong></p>
+    </div>
+  </footer>
+
+</body>
+</html>
