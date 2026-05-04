@@ -469,3 +469,95 @@
 
 </body>
 </html>
+/* ================================
+   PULIZIA VISUALIZZAZIONE OFFERTE
+   Versione compatta sotto card
+================================ */
+
+.offer-card-clean {
+  overflow: hidden;
+}
+
+.offer-card-clean .offer-content,
+.offer-card-clean .offer-top,
+.offer-card-clean .spec-row,
+.offer-card-clean .bottom-box,
+.offer-card-clean .mini-specs,
+.offer-card-clean .segment {
+  display: none !important;
+}
+
+.offer-visual {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px 22px 0 0;
+  background: #050506;
+}
+
+.offer-visual .offer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.offer-clean-footer {
+  padding: 18px 18px 20px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02)),
+    #070708;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.offer-clean-info .car-brand {
+  color: #ff1f3d;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.offer-clean-info h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+}
+
+.offer-clean-info p {
+  margin: 8px 0 16px;
+  color: rgba(255,255,255,0.68);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.offer-clean-info p strong {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.offer-clean-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.offer-clean-actions .btn {
+  min-height: 42px;
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .offer-clean-footer {
+    padding: 16px;
+  }
+
+  .offer-clean-info h3 {
+    font-size: 20px;
+  }
+}
