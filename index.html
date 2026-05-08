@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abbonamentiauto.it | Noleggio e abbonamenti auto</title>
+<meta name="description" content="Noleggio a lungo termine e abbonamenti auto. Basta solo un click.">
+<!-- ABBONAMENTIAUTO_INDEX_V13_YOUTUBE_NOCOOKIE -->
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#000;color:#fff;font-family:Inter,Segoe UI,Arial,sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+:root{--red:#ff1717;--muted:rgba(255,255,255,.68);--line:rgba(255,255,255,.14)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 55% 6%,rgba(255,23,23,.24),transparent 30%),#000}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:22px 22px}
+.container{max-width:1240px;margin:auto;padding:0 22px}
+.logo{height:58px;width:auto;object-fit:contain;display:block}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.head{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+nav{display:flex;gap:24px;font-size:14px;font-weight:800;color:rgba(255,255,255,.75)}
+nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--red);padding:14px 24px;font-weight:1000;color:#fff;border:0}
+.btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.hero{position:relative;overflow:hidden;padding:82px 0 66px}
+.hero:after{content:"";position:absolute;left:58%;top:118px;width:min(980px,82vw);height:520px;transform:translateX(-50%);border-top:2px solid var(--red);border-radius:100%;box-shadow:0 -20px 120px rgba(255,23,23,.4)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}
+.badge{display:inline-flex;border:1px solid rgba(255,23,23,.38);background:rgba(255,23,23,.12);border-radius:999px;padding:10px 16px;color:#ffd0d0;font-weight:900}
+h1{font-size:clamp(42px,5.6vw,72px);line-height:.98;margin:26px 0 20px;font-weight:1000;letter-spacing:-2px}
+h1 span{display:block;color:var(--red);margin-top:18px}
+.lead{color:var(--muted);font-size:18px;line-height:1.8;max-width:660px}
+.hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.hero-box,.panel{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:30px;padding:18px}
+.hero-title{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#ff9b9b;font-weight:1000;margin:0 0 12px}
+.hero-img-wrap{border-radius:24px;overflow:hidden;background:#050505;border:1px solid rgba(255,255,255,.1);cursor:pointer}
+.hero-img-wrap img{display:block;width:100%;height:520px;object-fit:cover;object-position:top;background:#050505}
+.hero-meta{display:none!important}
+section{padding:76px 0}
+.dark{background:#050505}
+.section-head small{display:block;color:var(--red);letter-spacing:4px;text-transform:uppercase;font-weight:1000;margin-bottom:10px}
+h2{font-size:44px;line-height:1;margin:0 0 14px;font-weight:1000}
+.card{overflow:hidden;border:1px solid var(--line);border-radius:28px;background:#070707;box-shadow:0 15px 45px rgba(0,0,0,.35)}
+.card img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top;background:#050505}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:13px}
+.action{border-radius:999px;border:1px solid var(--line);padding:14px;text-align:center;font-weight:900;background:rgba(255,255,255,.045);color:#fff}
+.action.red{background:var(--red);border-color:var(--red)}
+.filters{display:grid;grid-template-columns:1fr 190px 190px;gap:12px;border:1px solid var(--line);border-radius:26px;padding:15px;background:rgba(255,255,255,.035);margin-top:28px}
+input,select,textarea{width:100%;border-radius:999px;background:#090909;color:#fff;border:1px solid var(--line);padding:14px 16px;outline:0}
+.empty{border:1px dashed rgba(255,255,255,.25);border-radius:24px;padding:24px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.025)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.faq-list{display:grid;gap:14px;margin-top:24px}
+.faq-item{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:24px;padding:22px}
+.faq-item h3{margin:0 0 8px;font-size:18px}
+.faq-item p{margin:0;color:var(--muted);line-height:1.65}
+.social-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+footer{padding:36px 0;border-top:1px solid var(--line);background:#050505;color:rgba(255,255,255,.62)}
+.wa{position:fixed;right:22px;bottom:22px;width:64px;height:64px;border-radius:999px;background:#25D366;display:grid;place-items:center;font-size:28px;z-index:30}
+
+/* Caroselli stabili */
+.carousel-area{margin-top:30px}
+.carousel-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.carousel-controls{display:flex;gap:10px}
+.carousel-btn{width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:24px;font-weight:1000;cursor:pointer}
+.carousel-btn:hover{background:var(--red);border-color:var(--red)}
+.carousel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 20px}
+.carousel::-webkit-scrollbar{height:8px}
+.carousel::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:999px}
+.carousel::-webkit-scrollbar-thumb{background:rgba(255,23,23,.7);border-radius:999px}
+.carousel .card{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
+
+.video-showcase{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(circle at 70% 10%,rgba(255,23,23,.18),transparent 32%),#050505}
+.video-box{margin-top:30px;border:1px solid rgba(255,23,23,.28);background:rgba(255,255,255,.035);border-radius:34px;padding:18px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.video-frame{position:relative;overflow:hidden;border-radius:26px;background:#000;border:1px solid rgba(255,255,255,.12)}
+.video-frame video{display:block;width:100%;max-height:680px;background:#000}
+
+.youtube-frame{aspect-ratio:9/16;max-width:430px;margin:0 auto}
+.youtube-frame iframe{display:block;width:100%;height:100%;border:0;border-radius:26px;background:#000}
+@media(max-width:720px){.youtube-frame{max-width:100%}}
+
+.video-note{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:16px;color:var(--muted)}
+
+@media(max-width:1050px){
+  .hero-grid,.two{grid-template-columns:1fr}
+  .hero-cards{grid-template-columns:1fr 1fr}
+  .carousel .card{flex-basis:calc((100% - 22px)/2)}
+  nav{display:none}
+  .filters{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .container{padding:0 14px}
+  .logo{height:44px}
+  .hero-cards{grid-template-columns:1fr}
+  .hero-img-wrap img{height:auto;aspect-ratio:9/16}
+  .carousel .card{flex-basis:86%}
+  .carousel-header{align-items:flex-start;flex-direction:column}
+  .carousel-controls{width:100%;justify-content:center}
+  h2{font-size:36px}
+  h1{font-size:42px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container head">
+    <a href="#home"><img class="logo" src="img/logo-abbonamentiauto.png" alt="Abbonamentiauto.it"></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#video-presentazione">Video</a>
+      <a href="#noleggio">Noleggio</a>
+      <a href="#abbonamenti">Abbonamenti</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <a class="btn" href="https://wa.me/393513955191" target="_blank">WhatsApp</a>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">★ Offerte noleggio e abbonamento auto</div>
+      <h1>Per la tua prossima auto a noleggio o in abbonamento <span>basta solo un click!</span></h1>
+      <p class="lead">Confronta le offerte NLT e le formule di abbonamento auto. Il sito seleziona automaticamente il noleggio più economico e l’abbonamento più conveniente.</p>
+      <p>
+        <a class="btn" href="#noleggio">Guarda le NLT</a>
+        <a class="btn secondary" href="#abbonamenti" style="margin-left:10px">Vedi abbonamenti</a>
+      </p>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-box"><p class="hero-title">Noleggio più conveniente</p><div id="bestNlt"></div></div>
+      <div class="hero-box"><p class="hero-title">Abbonamento più conveniente</p><div id="bestAbbo"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="video-presentazione" class="video-showcase">
+  <div class="container">
+    <div class="section-head">
+      <small>Video di presentazione</small>
+      <h2>Scopri Abbonamentiauto.it</h2>
+      <p class="lead">Una panoramica veloce del sito, delle offerte NLT, degli abbonamenti auto e della richiesta immediata via WhatsApp.</p>
+    </div>
+    <div class="video-box">
+      <div class="video-frame youtube-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/pKFoe8k3f78"
+          title="Video presentazione Abbonamentiauto.it"
+          frameborder="0"
+          allow="clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-note">
+        <span>Guarda il video di lancio e poi scegli l’offerta più adatta a te.</span>
+        <a class="btn" href="https://wa.me/393513955191" target="_blank">Richiedi consulenza</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="noleggio">
+  <div class="container">
+    <div class="section-head">
+      <small>Noleggio a lungo termine</small>
+      <h2>Offerte NLT</h2>
+      <p class="lead">Scorri il carosello delle offerte di noleggio a lungo termine, ordinate automaticamente dal prezzo più basso.</p>
+    </div>
+    <div class="filters">
+      <input id="searchInput" placeholder="Cerca marca o modello NLT...">
+      <select id="fuelFilter"><option value="all">Alimentazione</option></select>
+      <select id="priceFilter"><option value="all">Prezzo</option><option value="300">Fino a 300 €</option><option value="500">Fino a 500 €</option><option value="800">Fino a 800 €</option><option value="1200">Fino a 1200 €</option><option value="2000">Fino a 2000 €</option></select>
+    </div>
+    <div class="carousel-area">
+      <div class="carousel-header">
+        <div class="lead" style="margin:0">Scorri le offerte oppure usa le frecce.</div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" onclick="scrollCarousel('offersCarousel', -1)">‹</button>
+          <button class="carousel-btn" type="button" onclick="scrollCarousel('offersCarousel', 1)">›</button>
+        </div>
+      </div>
+      <div id="offersCarousel" class="carousel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="abbonamenti" class="dark">
+  <div class="container">
+    <div class="section-head">
+      <small>Offerte abbonamento auto</small>
+      <h2>Abbonamenti auto</h2>
+      <p class="lead">Scorri le formule di abbonamento auto: pacchetti flessibili con canone chiaro, servizi inclusi e gestione semplice.</p>
+    </div>
+    <div class="carousel-area">
+      <div class="carousel-header">
+        <div class="lead" style="margin:0">Scegli la formula più adatta alle tue esigenze.</div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" onclick="scrollCarousel('abbonamentiCarousel', -1)">‹</button>
+          <button class="carousel-btn" type="button" onclick="scrollCarousel('abbonamentiCarousel', 1)">›</button>
+        </div>
+      </div>
+      <div id="abbonamentiCarousel" class="carousel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="dark">
+  <div class="container">
+    <div class="section-head">
+      <small>Domande frequenti</small>
+      <h2>FAQ</h2>
+      <p class="lead">Le risposte rapide per capire come funzionano noleggio, abbonamento, richiesta preventivo e servizi inclusi.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3>Qual è la differenza tra noleggio a lungo termine e abbonamento auto?</h3><p>Il noleggio a lungo termine è una formula più strutturata, con durata, chilometri e servizi definiti nel contratto. L’abbonamento auto è pensato per chi cerca maggiore flessibilità.</p></div>
+      <div class="faq-item"><h3>Cosa comprende il canone mensile?</h3><p>In base alla formula scelta, il canone può includere utilizzo del veicolo, manutenzione, coperture assicurative, assistenza e altri servizi indicati nella proposta.</p></div>
+      <div class="faq-item"><h3>Le offerte sono sempre disponibili?</h3><p>Le offerte sono soggette a disponibilità, variazione dei canoni e conferma da parte della società di noleggio o del partner operativo.</p></div>
+      <div class="faq-item"><h3>Posso richiedere un’offerta senza anticipo?</h3><p>Sì, alcune offerte prevedono anticipo zero. Quando non è presente una proposta adatta, è possibile richiedere una configurazione personalizzata.</p></div>
+      <div class="faq-item"><h3>Come funziona la richiesta via WhatsApp?</h3><p>Cliccando su WhatsApp viene creato un messaggio già compilato con modello, canone, durata, chilometri e anticipo.</p></div>
+      <div class="faq-item"><h3>Il servizio è per privati, aziende o partite IVA?</h3><p>Le soluzioni possono essere valutate per privati, aziende e partite IVA. La proposta finale dipende dal profilo cliente e dalle condizioni disponibili.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="container two">
+    <div class="panel">
+      <img class="logo" src="img/logo-abbonamentiauto.png" alt="Abbonamentiauto.it">
+      <h2>Richiedi un preventivo</h2>
+      <p class="lead">WhatsApp Business: +39 351 3955191<br>Email: postmaster@abbonamentiauto.it</p>
+      <div class="social-row">
+        <a class="btn" href="https://wa.me/393513955191" target="_blank">Apri WhatsApp</a>
+        <a class="btn secondary" href="https://www.facebook.com/profile.php?id=61588959776676" target="_blank">Pagina Facebook</a>
+      </div>
+    </div>
+    <div class="panel">
+      <input placeholder="Nome e cognome"><br><br>
+      <input placeholder="Telefono"><br><br>
+      <input placeholder="Auto o pacchetto di interesse"><br><br>
+      <textarea rows="5" placeholder="Messaggio" style="border-radius:22px"></textarea><br><br>
+      <a class="btn" href="https://wa.me/393513955191" target="_blank">Invia richiesta</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img class="logo" src="img/logo-abbonamentiauto.png" alt="Abbonamentiauto.it">
+    <p>Noleggio a lungo termine e abbonamenti auto · postmaster@abbonamentiauto.it · <a href="https://www.facebook.com/profile.php?id=61588959776676" target="_blank">Facebook</a></p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/393513955191" target="_blank">☎</a>
+
+<script>
+const WA = "393513955191";
+let OFFERS = [];
+
+function tipoNorm(o){
+  const raw = String(o.tipo || o.type || "").toUpperCase();
+  return raw.includes("ABB") ? "ABBONAMENTO" : "NLT";
+}
+function fileName(path){ return String(path || "").split("/").pop(); }
+function num(v){
+  if(typeof v === "number") return v;
+  return Number(String(v || "").replace(/€/g,"").replace(/\./g,"").replace(",",".").replace(/[^0-9.]/g,"") || 0);
+}
+function normalize(o, i){
+  const tipo = tipoNorm(o);
+  const card = o.card || o.image || o.immagine || "";
+  return {
+    id: o.id || fileName(card).replace(/\.(png|jpg|jpeg|webp|svg)$/i,"") || "offerta-" + i,
+    tipo,
+    segmento: o.segmento || o.category || "",
+    brand: o.brand || o.marca || "",
+    modello: o.modello || o.model || "",
+    modello_breve: o.modello_breve || o.shortModel || o.modello || "",
+    alimentazione: o.alimentazione || o.fuel || "",
+    cambio: o.cambio || o.gearbox || "",
+    mesi: Number(o.mesi || o.months || 0),
+    km: String(o.km || ""),
+    anticipo: String(o.anticipo || ""),
+    canone: String(o.canone || (o.canone_num ? o.canone_num + " €" : "")),
+    canone_num: Number(o.canone_num || o.price || num(o.canone) || 0),
+    card
+  };
+}
+function imageCandidates(o){
+  const card = String(o.card || "");
+  const file = fileName(card);
+  const folder = o.tipo === "ABBONAMENTO" ? "abbonamenti" : "assets";
+  return [...new Set([card, folder + "/" + file, file, "assets/" + file, "abbonamenti/" + file, "immagini/" + file].filter(Boolean))];
+}
+function imgHtml(o){
+  const c = imageCandidates(o);
+  return `<img src="${c[0]}" alt="${o.modello_breve}" data-candidates='${JSON.stringify(c)}' onerror="fallbackImg(this)">`;
+}
+function fallbackImg(img){
+  const arr = JSON.parse(img.dataset.candidates || "[]");
+  const idx = Number(img.dataset.idx || 0) + 1;
+  img.dataset.idx = idx;
+  if(arr[idx]) img.src = arr[idx];
+  else { img.style.opacity = ".12"; img.alt = "immagine non trovata"; }
+}
+function price(o){ return o.canone_num ? o.canone_num + "€" : "Su richiesta"; }
+function kmText(o){ return o.km || (o.tipo === "ABBONAMENTO" ? "Illimitati" : "-"); }
+function waLink(o){
+  const msg = `Ciao, sono interessato all'offerta Abbonamentiauto.it:\n\n${o.brand} ${o.modello_breve}\n${o.modello}\nCanone: ${o.canone || price(o)}\nAnticipo: ${o.anticipo || "-"}\nDurata: ${o.mesi || "-"} mesi\nKm: ${kmText(o)}\n\nVorrei ricevere maggiori informazioni.`;
+  return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+function openCard(o){
+  if(o && o.card) window.open(o.card, "_blank");
+}
+function hero(o, empty){
+  if(!o) return `<div class="empty"><strong>${empty}</strong><br>Inserire nel JSON almeno una riga con tipo NLT.</div>`;
+  return `<div class="hero-img-wrap" onclick='openCard(${JSON.stringify(o).replace(/'/g,"&#39;")})'>${imgHtml(o)}</div>`;
+}
+function card(o){
+  return `<article class="card">
+    ${imgHtml(o)}
+    <div class="actions">
+      <a class="action" href="${o.card}" target="_blank">Apri card</a>
+      <a class="action red" href="${waLink(o)}" target="_blank">WhatsApp</a>
+    </div>
+  </article>`;
+}
+function sortPrice(a,b){
+  const pa = a.canone_num || 999999;
+  const pb = b.canone_num || 999999;
+  return pa - pb;
+}
+function scrollCarousel(id, direction){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const cardEl = el.querySelector(".card");
+  const amount = cardEl ? cardEl.getBoundingClientRect().width + 22 : el.clientWidth * 0.85;
+  el.scrollBy({ left: direction * amount, behavior: "smooth" });
+}
+async function load(){
+  try{
+    const r = await fetch("offerte.json?nocache=" + Date.now(), {cache:"no-store"});
+    const data = await r.json();
+    const arr = Array.isArray(data) ? data : [...(data.offers||[]), ...(data.noleggio||[]), ...(data.abbonamenti||[])];
+    OFFERS = arr.map(normalize);
+  }catch(e){
+    document.body.insertAdjacentHTML("afterbegin", `<div style="background:#b00000;padding:14px;text-align:center;font-weight:900">Errore: offerte.json non caricato o non valido</div>`);
+    console.error(e);
+  }
+  renderAll();
+}
+function renderAll(){
+  const nlt = OFFERS.filter(o=>o.tipo==="NLT").sort(sortPrice);
+  const abb = OFFERS.filter(o=>o.tipo==="ABBONAMENTO").sort(sortPrice);
+
+  bestNlt.innerHTML = hero(nlt[0], "Nessuna offerta NLT trovata");
+  bestAbbo.innerHTML = hero(abb[0], "Nessun abbonamento trovato");
+
+  const fuels = ["Alimentazione", ...new Set(nlt.map(o=>o.alimentazione).filter(Boolean))];
+  fuelFilter.innerHTML = fuels.map((f,i)=>`<option value="${i===0?'all':f}">${f}</option>`).join("");
+
+  renderOffers();
+
+  abbonamentiCarousel.innerHTML = abb.length
+    ? abb.map(card).join("")
+    : `<div class="empty"><strong>Nessun abbonamento trovato.</strong><br>Nel JSON usa tipo ABBONAMENTO.</div>`;
+}
+function renderOffers(){
+  const nltOnly = OFFERS.filter(o => o.tipo === "NLT");
+  const q = searchInput.value.toLowerCase();
+  const f = fuelFilter.value;
+  const p = priceFilter.value;
+  const filtered = nltOnly.filter(o =>
+    `${o.brand} ${o.modello_breve} ${o.modello}`.toLowerCase().includes(q) &&
+    (f==="all" || o.alimentazione===f) &&
+    (p==="all" || o.canone_num <= Number(p))
+  ).sort(sortPrice);
+
+  offersCarousel.innerHTML = filtered.length
+    ? filtered.map(card).join("")
+    : `<div class="empty"><strong>Nessuna offerta NLT visibile.</strong><br>Inserisci nel JSON offerte con tipo NLT e immagini nella cartella assets.</div>`;
+}
+[searchInput,fuelFilter,priceFilter].forEach(el=>el.addEventListener("input",renderOffers));
+load();
+</script>
+</body>
+</html>
